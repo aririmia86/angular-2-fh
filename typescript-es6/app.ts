@@ -1,35 +1,22 @@
-let miFuncion = function(a) {
-  return a;
+let avenger = {
+  nombre: "Steve",
+  clave: "Capitan America",
+  poder: "Droga"
 }
 
-let miFuncionF = a => a; // Arrow function: Hace lo mismo que lo de arriba;
+//let nombre = avenger.nombre;
+//let clave = avenger.clave;
+//let poder = avenger.poder;
 
-console.log(miFuncion("Normal"));
-console.log(miFuncionF("Flecha"));
+let {poder, nombre, clave} = avenger; // let { } Formato para destructuracion de objetos
+// Se puede cambiar el orden
 
-let miFuncion2 = function (a:number, b:number) {
-  return a + b;
-}
 
-let miFuncion2F = (a:number, b:number) => a + b; // Arrow function: Hace lo mismo que lo de arriba;
+console.log(nombre, clave, poder);
 
-let miFuncion3 = function (nombre:string) {
-  nombre = nombre.toUpperCase();
-  return nombre;
-}
+let avengers:string[] = ["Thor", "Steve", "Tony"];
 
-let miFuncion3F = (nombre:string) => {
-  nombre = nombre.toUpperCase();
-  return nombre;
-}
+let [thor, capi, ironman] = avengers; // let [ ] Formato para destructuracion de arrays
+// El orden debe ser secuencial
 
-let nombre = "Pedro";
-
-let hulk = {
-  nombre: "Hulk",
-  smash(){
-    setTimeout(() => console.log(this.nombre + " smash!!"), 1500);
-  }
-}
-
-hulk.smash();
+console.log(thor, capi, ironman);
