@@ -1,16 +1,27 @@
-function activar(quien, objeto, momento) {
-    if (objeto === void 0) { objeto = "batiseñal"; }
-    // quien es un parametro obligatorio de tipo string
-    // objeto es un parametro por defecto con valor batiseñal
-    // momento es un parametro opcional
-    var mensaje;
-    if (momento) {
-        mensaje = quien + " activ\u00F3 la " + objeto + " en la " + momento;
+var miFuncion = function (a) {
+    return a;
+};
+var miFuncionF = function (a) { return a; }; // Arrow function: Hace lo mismo que lo de arriba;
+console.log(miFuncion("Normal"));
+console.log(miFuncionF("Flecha"));
+var miFuncion2 = function (a, b) {
+    return a + b;
+};
+var miFuncion2F = function (a, b) { return a + b; }; // Arrow function: Hace lo mismo que lo de arriba;
+var miFuncion3 = function (nombre) {
+    nombre = nombre.toUpperCase();
+    return nombre;
+};
+var miFuncion3F = function (nombre) {
+    nombre = nombre.toUpperCase();
+    return nombre;
+};
+var nombre = "Pedro";
+var hulk = {
+    nombre: "Hulk",
+    smash: function () {
+        var _this = this;
+        setTimeout(function () { return console.log(_this.nombre + " smash!!"); }, 1500);
     }
-    else {
-        mensaje = quien + " activ\u00F3 la " + objeto;
-    }
-    console.log(mensaje);
-}
-activar("Gordon", "batiseñal", "tarde"); //Para darle valor a momento hay que definir objeto
-// No es posible definir una funcion con el primer parametro opcional y el ultimo obligatorio
+};
+hulk.smash();
