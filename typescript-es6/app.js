@@ -1,13 +1,16 @@
-function getNombre() {
-    return "Fernando";
+function activar(quien, objeto, momento) {
+    if (objeto === void 0) { objeto = "batiseñal"; }
+    // quien es un parametro obligatorio de tipo string
+    // objeto es un parametro por defecto con valor batiseñal
+    // momento es un parametro opcional
+    var mensaje;
+    if (momento) {
+        mensaje = quien + " activ\u00F3 la " + objeto + " en la " + momento;
+    }
+    else {
+        mensaje = quien + " activ\u00F3 la " + objeto;
+    }
+    console.log(mensaje);
 }
-var nombre = "Juan";
-var apellido = "Perez";
-var edad = 32;
-//let texto:string = "Hola, " + nombre + " " + apellido + " (" + edad + ")";
-var texto = "Hola, " + nombre + " " + apellido + " (" + edad + ") ";
-var textoMultiLinea = "Hola,\n" + nombre + " " + apellido + "\n(" + edad + ") ";
-var texto2 = " " + getNombre() + " "; //Dentro de ${} se puede incluir JS puro + 
-console.log(texto);
-console.log(textoMultiLinea);
-console.log(texto2);
+activar("Gordon", "batiseñal", "tarde"); //Para darle valor a momento hay que definir objeto
+// No es posible definir una funcion con el primer parametro opcional y el ultimo obligatorio
