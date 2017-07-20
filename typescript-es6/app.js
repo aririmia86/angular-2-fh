@@ -1,12 +1,21 @@
-var mensaje = "hola";
-// let mensaje = "adios"; No se puede declarar dos veces la misma variable
-if (true) {
-    var mensaje_1 = "adios";
-}
-console.log(mensaje); // Imprime hola
-var OPCIONES = "todas";
-// OPCIONES = "ninguna"; No se puede cambiar el valor de una constante
-// const OTRACONSTANTE: No se puede declarar una constante sin inicializarla
-if (true) {
-    var OPCIONES_1 = "ninguna"; // Se puede redeclarar en otro Scope
-}
+var nombre;
+nombre = "Peter";
+//nombre = 123; //No se puede cambiar el tipo de la variable
+var numero = 123;
+var booleano = true;
+var hoy = new Date();
+hoy = new Date('2020-10-21');
+console.log(hoy);
+var cualquiera;
+cualquiera = nombre;
+cualquiera = numero;
+cualquiera = booleano;
+cualquiera = hoy;
+var spiderman = {
+    nombre: "Peter",
+    edad: 20
+};
+spiderman = {
+    nombre: "Juan",
+    edad: 30,
+};

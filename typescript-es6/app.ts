@@ -1,17 +1,29 @@
-let mensaje = "hola";
-// let mensaje = "adios"; No se puede declarar dos veces la misma variable
+let nombre:string;
+nombre = "Peter";
+//nombre = 123; //No se puede cambiar el tipo de la variable
+let numero:number = 123;
+let booleano:boolean = true;
 
-if(true) {
-  let mensaje = "adios";
+let hoy:Date = new Date();
+
+hoy = new Date('2020-10-21');
+
+console.log(hoy);
+
+let cualquiera:any;
+
+cualquiera = nombre;
+cualquiera = numero;
+cualquiera = booleano;
+cualquiera = hoy;
+
+let spiderman = {
+  nombre: "Peter",
+  edad: 20
 }
 
-console.log(mensaje); // Imprime hola
-
-const OPCIONES = "todas";
-
-// OPCIONES = "ninguna"; No se puede cambiar el valor de una constante
-// const OTRACONSTANTE: No se puede declarar una constante sin inicializarla
-
-if(true) {
-  const OPCIONES = "ninguna"; // Se puede redeclarar en otro Scope
+spiderman = {
+  nombre: "Juan",
+  edad: 30,
+  //poder: "trepar paredes" No se pueden añadir propiedades
 }
