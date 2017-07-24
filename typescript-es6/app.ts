@@ -1,18 +1,10 @@
-class Avenger {
-  nombre:string = "Sin nombre";
-  equipo:string = undefined;
-  nombreReal:string = undefined;
+//import {Xmen} from './classes/xmen.class';
+//import {Villano} from './classes/villano.class';
+import {Xmen, Villano} from './classes/index';
 
-  puedePelear:boolean = false;
-  peleasGanadas:number = 0;
 
-  constructor(nombre:string, equipo:string, nombreReal:string) {
-    this.nombre = nombre;
-    this.equipo = equipo;
-    this.nombreReal = nombreReal;
-  }
-}
+let wolverine = new Xmen("Logan", "wolverine");
+let lex = new Villano("Lex Luthor", "Conquistar mundo");
 
-let antman:Avenger = new Avenger("Antman", "Capitan", "Scott Lang");
-
-console.log(antman);
+wolverine.imprimir();
+lex.imprimirPlan();

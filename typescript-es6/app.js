@@ -1,15 +1,9 @@
-var Avenger = (function () {
-    function Avenger(nombre, equipo, nombreReal) {
-        this.nombre = "Sin nombre";
-        this.equipo = undefined;
-        this.nombreReal = undefined;
-        this.puedePelear = false;
-        this.peleasGanadas = 0;
-        this.nombre = nombre;
-        this.equipo = equipo;
-        this.nombreReal = nombreReal;
-    }
-    return Avenger;
-}());
-var antman = new Avenger("Antman", "Capitan", "Scott Lang");
-console.log(antman);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+//import {Xmen} from './classes/xmen.class';
+//import {Villano} from './classes/villano.class';
+var index_1 = require("./classes/index");
+var wolverine = new index_1.Xmen("Logan", "wolverine");
+var lex = new index_1.Villano("Lex Luthor", "Conquistar mundo");
+wolverine.imprimir();
+lex.imprimirPlan();
