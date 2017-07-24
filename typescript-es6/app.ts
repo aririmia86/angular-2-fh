@@ -1,22 +1,23 @@
-let avenger = {
-  nombre: "Steve",
-  clave: "Capitan America",
-  poder: "Droga"
-}
+let prom1 = new Promise(function(resolve, reject){
+  setTimeout(() => {
+    console.log("Promesa terminada");
 
-//let nombre = avenger.nombre;
-//let clave = avenger.clave;
-//let poder = avenger.poder;
+    // Termina bien
+    //resolve();
 
-let {poder, nombre, clave} = avenger; // let { } Formato para destructuracion de objetos
-// Se puede cambiar el orden
+    // Termina mal
+    reject();
+  }, 1500);
+});
 
+console.log("Paso 1");
 
-console.log(nombre, clave, poder);
+prom1.then(
+  function(){
+  console.log("Ejecutarme cuando se termine bien");
+  },
+  function() {
+    console.error("Ejecutar si algo sale mal");
+  });
 
-let avengers:string[] = ["Thor", "Steve", "Tony"];
-
-let [thor, capi, ironman] = avengers; // let [ ] Formato para destructuracion de arrays
-// El orden debe ser secuencial
-
-console.log(thor, capi, ironman);
+  console.log("Paso 2");
