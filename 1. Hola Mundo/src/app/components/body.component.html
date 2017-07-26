@@ -2,11 +2,15 @@
   <div class="col-md-6">
     <h1>*ngIf</h1>
     <hr/>
-    <div class="card card-inverse card-primary mb-3 text-center">
+    <button type="button" class="btn btn-outline-primary btn-block" (click)="mostrar = !mostrar">
+      Mostrar/Ocultar
+    </button>
+    <br/>
+    <div *ngIf="mostrar" class="card card-inverse card-primary mb-3 text-center">
       <div class="card-block">
         <blockquote class="card-blockquote">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          <p>{{frase.mensaje}}</p>
+          <footer>{{frase.autor}}</footer>
         </blockquote>
       </div>
     </div>
@@ -15,12 +19,9 @@
     <h1>*ngFor</h1>
     <hr/>
     <ul class="list-group">
-      <li class="list-group-item">Item X</li>
-      <li class="list-group-item">Item X</li>
-      <li class="list-group-item">Item X</li>
-      <li class="list-group-item">Item X</li>
-      <li class="list-group-item">Item X</li>
-      <li class="list-group-item">Item X</li>
+      <li *ngFor="let persona of personajes; let i = index" class="list-group-item">
+        {{i + 1}}. {{persona}}
+      </li>
     </ul>
   </div>
 </div>
