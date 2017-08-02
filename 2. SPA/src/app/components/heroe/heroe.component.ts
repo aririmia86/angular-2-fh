@@ -17,6 +17,7 @@ export class HeroeComponent {
       // params siempre devuelve variables de tipo strings
       // console.log(params['id']);
       this.heroe = this._heroesService.getHeroe(params['id']);
+      // console.log(this.heroe);
     })
   }
 
