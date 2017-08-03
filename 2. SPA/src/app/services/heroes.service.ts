@@ -55,6 +55,9 @@ export class HeroesService {
       }
     ];
 
+  private termino:string;
+  private returnToSearch:boolean;
+
   getHeroes():Heroe[] {
     return this.heroes;
   }
@@ -63,16 +66,35 @@ export class HeroesService {
     return this.heroes[id];
   }
 
-  buscarHeroes(termino:string):Heroe[] {
+  buscarHeroes(termino:string):{heroesArr:Heroe[],heroesIndex:number[]} {
     let heroesArr:Heroe[] = [];
+    let heroesIndex:number[] = [];
+    this.termino = termino;
     termino = termino.toLowerCase();
     for(let heroe of this.heroes) {
       let nombre = heroe.nombre.toLowerCase();
       if(nombre.indexOf(termino) >= 0){
         heroesArr.push(heroe);
+        heroesIndex.push(this.heroes.indexOf(heroe));
       }
     }
-    return heroesArr;
+    let result = {
+      heroesArr,
+      heroesIndex
+    }
+    return result;
+  }
+
+  getTermino():string {
+    return this.termino;
+  }
+
+  setReturnToSearch(value:boolean) {
+    this.returnToSearch = value;
+  }
+
+  getReturnToSearch():boolean {
+    return this.returnToSearch;
   }
 
   constructor() {

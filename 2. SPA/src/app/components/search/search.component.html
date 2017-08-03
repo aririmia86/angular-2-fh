@@ -1,0 +1,20 @@
+<h1>Buscando: <small>{{termino}}</small></h1>
+<div class="card-columns">
+  <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index;">
+    <!--
+    <img class="card-img-top img-fluid" src="{{heroe.img}}" alt="Card image cap">
+    -->
+    <!-- Envolviendo a los atributos con [] se indica que es un atributo manejado por Angular -->
+    <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
+    <div class="card-block">
+      <h4 class="card-title">{{heroe.nombre}}</h4>
+      <p class="card-text">{{heroe.bio}}</p>
+      <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+
+      <button (click)="verHeroe(indices[i])"
+        type="button" class="btn btn-outline-primary btn-block">Ver más...</button>
+      <!-- Con /heroe se indica que tiene cambiar la URL desde la raiz -->
+      <!--<a [routerLink]="['/heroe', 'i']" class="btn btn-outline-primary btn-block">Ver más link...</a>-->
+    </div>
+  </div>
+</div>

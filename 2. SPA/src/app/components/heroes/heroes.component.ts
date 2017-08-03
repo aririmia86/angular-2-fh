@@ -22,6 +22,7 @@ export class HeroesComponent implements OnInit {
   }
 
   verHeroe(idx:number) {
+    this._heroesService.setReturnToSearch(false);
     this.router.navigate(['/heroe', idx]);
   }
 
