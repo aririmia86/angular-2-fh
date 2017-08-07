@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   nombre:string = "Alejandro";
   array:number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  pi:number = Math.PI;
 }
