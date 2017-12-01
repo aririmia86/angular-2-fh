@@ -10,9 +10,9 @@ import { SpotifyService } from "../../services/spotify.service";
 export class SearchComponent {
 
   constructor(public _spotify: SpotifyService) {
-    this._spotify.getArtistas().subscribe(resp => {
+    this._spotify.getArtistas().subscribe(artistas => {
       console.log('Información lista');
-      console.log(resp);
+      console.log(artistas);
     });
   }
 

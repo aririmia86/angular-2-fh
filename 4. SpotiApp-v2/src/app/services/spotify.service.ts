@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SpotifyService {
@@ -15,7 +16,10 @@ export class SpotifyService {
     let headers = new HttpHeaders({
       'authorization': 'Bearer BQDQp9ExJwYFOU8KRw1TDy_Hm0oO_PU5bMUO3eQqs8fhTlbOCR_bR_pcumZ63Z3hihdu06-m0ZN1EDlXU0w'
     });
-    return this.http.get(url, { headers });
+    return this.http.get(url, { headers }).map((resp: any) => {
+      this.artistas = resp.artists.items;
+      return this.artistas;
+    });
   }
 
 }
