@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
 
 import { app_routing } from "./app.routes";
 
@@ -21,7 +22,8 @@ import { SpotifyService } from "./services/spotify.service";
   imports: [
     BrowserModule,
     app_routing,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     SpotifyService
