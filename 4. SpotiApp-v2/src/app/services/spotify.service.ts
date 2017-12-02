@@ -34,10 +34,12 @@ export class SpotifyService {
     let url = `${this.urlSpotify}artists/${id}`;
     let headers = this.getHeaders();
     return this.http.get(url, { headers });
-    // .map((resp: any) => {
-    //   this.artistas = resp.artists.items;
-    //   return this.artistas;
-    // });
+  }
+
+  getTop(id: string) {
+    let url = `${this.urlSpotify}artists/${id}/top-tracks?country=US`;
+    let headers = this.getHeaders();
+    return this.http.get(url, { headers });
   }
 
 }
