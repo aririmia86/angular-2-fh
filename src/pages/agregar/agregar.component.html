@@ -23,7 +23,7 @@
   </ion-card>
 
   <!-- Items -->
-  <ion-card>
+  <ion-card *ngIf="items.length > 0">
     <ion-card-header>
       <h3>Items agregados</h3>
     </ion-card-header>
@@ -33,9 +33,9 @@
           <button ion-button color="dark" clear>
             {{item.nombre}}
           </button>
-          <button ion-button outline item-right color="danger" clear>
+          <button (click)="borrarItem(i)" ion-button outline item-right color="danger" clear>
             <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
-             Borrar item ({{ i }})
+             Borrar item
           </button>
         </ion-item>
       </ion-list>

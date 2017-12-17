@@ -25,4 +25,8 @@ export class AgregarComponent implements OnInit {
     this.items.push(item);
     this.nombreItem = '';
   }
+
+  borrarItem(index:number) {
+    this.items.splice(index, 1);
+  }
 }
