@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {PendienteComponent} from '../pages/pendientes/pendientes.component';
 import {TerminadoComponent} from '../pages/terminados/terminados.component';
 import { AgregarComponent } from '../pages/agregar/agregar.component';
+import { DetalleComponent } from '../pages/detalle/detalle.component';
 
 import { ListaDeseosService } from "./services/lista-deseos.service";
 
@@ -23,7 +24,8 @@ import { PlaceholderPipe } from './pipes/placeholder.pipe';
     PendienteComponent,
     TerminadoComponent,
     AgregarComponent,
-    PlaceholderPipe
+    PlaceholderPipe,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { PlaceholderPipe } from './pipes/placeholder.pipe';
     TabsPage,
     PendienteComponent,
     TerminadoComponent,
-    AgregarComponent
+    AgregarComponent,
+    DetalleComponent
   ],
   providers: [
     StatusBar,
