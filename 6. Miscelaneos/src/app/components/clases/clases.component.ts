@@ -10,10 +10,16 @@ export class ClasesComponent implements OnInit {
   propiedades:Object = {
     danger: false
   }
+  loading:boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ejecutar() {
+    this.loading = true;
+    setTimeout(()=> this.loading = false, 3000);
   }
 
 }
