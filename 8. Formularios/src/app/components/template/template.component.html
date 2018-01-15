@@ -15,11 +15,12 @@
                [(ngModel)]="usuario.nombre"
                minlength="5"
                required
-               #nombre="ngModel">
-        <div *ngIf="nombre.errors?.required">
+               #nombre="ngModel"
+               [ngClass]="{'is-invalid': (nombre.errors?.required || nombre.errors?.minlength) && nombre.touched}">
+        <div class="invalid-feedback" *ngIf="nombre.errors?.required">
           Este campo es requerido
         </div>
-        <div *ngIf="nombre.errors?.minlength">
+        <div class="invalid-feedback" *ngIf="nombre.errors?.minlength">
           Por lo menos {{ nombre.errors.minlength.requiredLength }} caracteres
         </div>
       </div>
@@ -35,8 +36,9 @@
                name="apellido"
                [(ngModel)]="usuario.apellido"
                required
-               #apellido="ngModel">
-         <div *ngIf="apellido.errors?.required">
+               #apellido="ngModel"
+               [ngClass]="{'is-invalid': apellido.errors?.required && apellido.touched}">
+         <div class="invalid-feedback"  *ngIf="apellido.errors?.required">
            Este campo es requerido
          </div>
       </div>
@@ -55,11 +57,12 @@
              [(ngModel)]="usuario.email"
              required
              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-             #correo="ngModel">
-       <div *ngIf="correo.errors?.required">
+             #correo="ngModel"
+             [ngClass]="{'is-invalid': (correo.errors?.required || correo.errors?.pattern) && correo.touched}">
+       <div class="invalid-feedback" *ngIf="correo.errors?.required">
          Este campo es requerido
        </div>
-       <div *ngIf="correo.errors?.pattern">
+       <div class="invalid-feedback" *ngIf="correo.errors?.pattern">
          El campo no tiene formato de correo
        </div>
     </div>
@@ -70,7 +73,7 @@
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8">
-      <button type="submit" class="btn btn-outline-primary">
+      <button type="submit" class="btn btn-outline-primary" [disabled]="!forma.valid">
         Guardar
       </button>
     </div>
