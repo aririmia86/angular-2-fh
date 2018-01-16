@@ -11,7 +11,16 @@
         <input class="form-control"
                type="text"
                placeholder="Nombre"
-               formControlName="nombre">
+               formControlName="nombre"
+               [ngClass]="{'is-invalid': !forma.get('nombre').valid}">
+         <div class="invalid-feedback">
+           <div *ngIf="forma.controls['nombre'].errors?.required">
+             El nombre es necesario.
+           </div>
+           <div *ngIf="forma.controls['nombre'].errors?.minlength">
+             Por lo menos 3 caracteres.
+           </div>
+         </div>
       </div>
     </div>
 
@@ -22,7 +31,13 @@
         <input class="form-control"
                type="text"
                placeholder="Apellido"
-               formControlName="apellido">
+               formControlName="apellido"
+               [ngClass]="{'is-invalid': !forma.get('apellido').valid}">
+         <div class="invalid-feedback">
+           <div *ngIf="forma.controls['apellido'].errors?.required">
+             El apellido es necesario.
+           </div>
+         </div>
       </div>
     </div>
 
@@ -35,7 +50,16 @@
       <input class="form-control"
              type="email"
              placeholder="Correo electrónico"
-             formControlName="correo">
+             formControlName="correo"
+             [ngClass]="{'is-invalid': !forma.get('correo').valid}">
+       <div class="invalid-feedback">
+         <div *ngIf="forma.controls['correo'].errors?.required">
+           El correo es necesario.
+         </div>
+         <div *ngIf="forma.controls['correo'].errors?.pattern">
+           No tiene patrón de correo.
+         </div>
+       </div>
     </div>
   </div>
 
