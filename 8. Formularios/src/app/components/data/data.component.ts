@@ -32,10 +32,11 @@ export class DataComponent {
         Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')
       ])
     });
+    this.forma.setValue(this.usuario);
   }
 
   guardarCambios() {
-
+    this.forma.reset(this.usuario);
   }
 
 }
