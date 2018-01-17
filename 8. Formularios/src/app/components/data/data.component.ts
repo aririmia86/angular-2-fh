@@ -26,7 +26,10 @@ export class DataComponent {
           Validators.required,
           Validators.minLength(3)
         ]),
-        'apellido': new FormControl('', Validators.required)
+        'apellido': new FormControl('', [
+          Validators.required,
+          this.noAsafa
+        ])
       }),
       'correo': new FormControl('', [
         Validators.required,
@@ -45,8 +48,17 @@ export class DataComponent {
     );
   }
 
+  noAsafa(control:FormControl):{[s:string]:boolean} {
+    if(control.value === 'Asafa') {
+      return {
+        noAsafa: true
+      }
+    }
+    return null;
+  }
+
   guardarCambios() {
-    this.forma.reset(this.usuario);
+    // this.forma.reset(this.usuario);
   }
 
 }
