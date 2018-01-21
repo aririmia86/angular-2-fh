@@ -81,6 +81,43 @@
   </div>
 
   <div class="form-group row">
+    <label class="col-2 col-form-label">Password</label>
+    <div class="col-md-8">
+
+      <input class="form-control"
+             type="password"
+             placeholder="Password"
+             formControlName="password1"
+             [ngClass]="{'is-invalid': !forma.get('password1').valid}">
+       <div class="invalid-feedback">
+         <div *ngIf="forma.controls['password1'].errors?.required">
+           El password es necesario.
+         </div>
+       </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Repetir</label>
+    <div class="col-md-8">
+
+      <input class="form-control"
+             type="password"
+             placeholder="Password"
+             formControlName="password2"
+             [ngClass]="{'is-invalid': !forma.get('password2').valid}">
+       <div class="invalid-feedback">
+         <div *ngIf="forma.controls['password2'].errors?.required">
+           El password es necesario.
+         </div>
+         <div *ngIf="forma.controls['password2'].errors?.noIguales">
+           No son iguales.
+         </div>
+       </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8">
       <button type="submit" class="btn btn-outline-primary">

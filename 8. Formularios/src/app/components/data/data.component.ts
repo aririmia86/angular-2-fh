@@ -37,9 +37,16 @@ export class DataComponent {
       ]),
       'pasatiempos': new FormArray([
         new FormControl('Correr', Validators.required)
-      ])
+      ]),
+      'password1': new FormControl('', Validators.required),
+      'password2': new FormControl()
     });
     // this.forma.setValue(this.usuario);
+
+    this.forma.controls['password2'].setValidators([
+      Validators.required,
+      this.noIgual.bind(this.forma)
+    ])
   }
 
   agregarPasatiempo() {
@@ -52,6 +59,16 @@ export class DataComponent {
     if(control.value === 'Asafa') {
       return {
         noAsafa: true
+      }
+    }
+    return null;
+  }
+
+  noIgual(control:FormControl):{[s:string]:boolean} {
+    let forma:any = this;
+    if(control.value !== forma.controls['password1'].value) {
+      return {
+        noIguales: true
       }
     }
     return null;
