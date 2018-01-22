@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { app_routing } from './app.routes';
 
@@ -8,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroes/heroe.component';
 
+import { HeroesService } from './services/heroes.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,12 @@ import { HeroeComponent } from './components/heroes/heroe.component';
   imports: [
     BrowserModule,
     app_routing,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    HeroesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
