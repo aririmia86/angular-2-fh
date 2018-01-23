@@ -53,4 +53,16 @@ export class HeroesService {
     });
   }
 
+  getHeroes() {
+    let headers:Headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    return this.http.get(
+      this.heroesURL,
+      { headers }
+    ).map(res => {
+      return res.json();
+    });
+  }
+
 }
