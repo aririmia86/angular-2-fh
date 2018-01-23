@@ -65,4 +65,17 @@ export class HeroesService {
     });
   }
 
+  borrarHeroe(key$:string) {
+    let headers:Headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let url = `${this.heroeURL}${key$}.json`;
+    return this.http.delete(
+      url,
+      { headers }
+    ).map(res => {
+      return res.json();
+    });
+  }
+
 }
