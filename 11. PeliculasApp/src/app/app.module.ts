@@ -13,6 +13,7 @@ import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { app_routing } from './app.routes';
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
 import { GaleriaComponent } from './components/home/galeria.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { GaleriaComponent } from './components/home/galeria.component';
     BrowserModule,
     HttpModule,
     JsonpModule,
-    app_routing
+    app_routing,
+    FormsModule
   ],
   providers: [
     PeliculasService

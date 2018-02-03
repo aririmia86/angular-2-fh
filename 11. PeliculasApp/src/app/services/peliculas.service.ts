@@ -8,6 +8,7 @@ export class PeliculasService {
 
   private apikey = '172c739705f8736ebc0a48dcf00ac8c1';
   private urlMoviedb = 'https://api.themoviedb.org/3';
+  peliculas: any[] = [];
 
   constructor( private jsonp: Jsonp ) { }
 
@@ -39,7 +40,10 @@ export class PeliculasService {
       &api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`
     ;
     return this.jsonp.get( url )
-      .map( res => res.json());
+      .map( res => {
+        res.json();
+        this.peliculas = res.json().results;
+      });
   }
 
   getPelicula(id: string) {
