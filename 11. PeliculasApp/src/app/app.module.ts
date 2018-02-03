@@ -12,6 +12,7 @@ import { PeliculaComponent } from './components/pelicula/pelicula.component';
 
 import { app_routing } from './app.routes';
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
+import { GaleriaComponent } from './components/home/galeria.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
     BusquedaComponent,
     PeliculaComponent,
     PeliculaImagenPipe,
+    GaleriaComponent,
   ],
   imports: [
     BrowserModule,
