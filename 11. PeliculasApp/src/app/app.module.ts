@@ -11,6 +11,7 @@ import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
 
 import { app_routing } from './app.routes';
+import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { app_routing } from './app.routes';
     HomeComponent,
     BusquedaComponent,
     PeliculaComponent,
+    PeliculaImagenPipe,
   ],
   imports: [
     BrowserModule,
