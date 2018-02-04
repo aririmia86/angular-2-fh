@@ -47,8 +47,7 @@ export class PeliculasService {
   }
 
   getPelicula(id: string) {
-    const url = `${ this.urlMoviedb }/movie/${ id }?api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`
-    ;
+    const url = `${ this.urlMoviedb }/movie/${ id }?api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
     return this.jsonp.get( url )
       .map( res => res.json());
   }
