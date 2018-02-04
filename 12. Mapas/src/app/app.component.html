@@ -1,2 +1,18 @@
 <app-navbar></app-navbar>
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom"></agm-map>
+<div class="container main-container">
+  <div class="row">
+    <div class="col-md-4">
+      <h5>Marcador</h5>
+    </div>
+    <div class="col-md-8">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker [latitude]="lat" [longitude]="lng">
+          <agm-info-window>
+            <strong>Título</strong>
+            <p>Contenido</p>
+          </agm-info-window>
+        </agm-marker>
+      </agm-map>
+    </div>
+  </div>
+</div>
