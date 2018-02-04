@@ -5,9 +5,10 @@ import { BusquedaComponent } from './components/busqueda/busqueda.component';
 
 const app_routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'buscar/', component: BusquedaComponent },
+  { path: 'buscar', component: BusquedaComponent },
   { path: 'buscar/:texto', component: BusquedaComponent },
   { path: 'pelicula/:id/:pag', component: PeliculaComponent },
+  { path: 'pelicula/:id/:pag/:busqueda', component: PeliculaComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
