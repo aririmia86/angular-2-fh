@@ -2,7 +2,34 @@
 <div class="container main-container">
   <div class="row">
     <div class="col-md-4">
-      <h5>Marcador</h5>
+      <div *ngIf="marcadorSel">
+        <h5>Marcador</h5>
+        <hr>
+        <div class="form-group">
+          <label>Título</label>
+          <input type="text" name="titulo" class="form-control" [(ngModel)]="marcadorSel.titulo">
+        </div>
+        <div class="form-group">
+          <label>Descripción</label>
+          <textarea
+            type="text"
+            name="descripcion"
+            rows="5"
+            class="form-control"
+            [(ngModel)]="marcadorSel.descripcion"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label>Arrastable</label>
+          <select name="draggable" class="form-control" [(ngModel)]="draggable" (change)="cambiarDraggable()">
+            <option value="1">Sí</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-outline-primary btn-block" (click)="_ms.guardarMarcadores()">
+          Guardar cambios
+        </button>
+      </div>
     </div>
     <div class="col-md-8">
       <agm-map
@@ -23,6 +50,9 @@
           <agm-info-window>
             <strong>{{marcador.titulo}}</strong>
             <p *ngIf="marcador.descripcion">{{marcador.descripcion}}</p>
+            <p>
+              <a (click)="_ms.borrarMarcador(i)" class="text-danger puntero">Borrar marcador</a>
+            </p>
           </agm-info-window>
         </agm-marker>
       </agm-map>
