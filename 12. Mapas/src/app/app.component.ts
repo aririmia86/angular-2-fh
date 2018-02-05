@@ -12,7 +12,9 @@ export class AppComponent {
   lng = -4.427825;
   zoom = 16;
 
-  constructor(public _ms: MapasService) { }
+  constructor(public _ms: MapasService) {
+    this._ms.cargarMarcadores();
+  }
 
   clickMapa(evento) {
     const nuevoMarcador: Marcador = {
@@ -22,5 +24,17 @@ export class AppComponent {
       draggable: true
     };
     this._ms.insertarMarcador(nuevoMarcador);
+  }
+
+  clickMarcador(marcador: Marcador, i: number) {
+    console.log(marcador, i);
+  }
+
+  dragEndMarcador(marcador: Marcador, evento) {
+    const lat = evento.coords.lat;
+    const lng = evento.coords.lng;
+    marcador.lat = lat;
+    marcador.lng = lng;
+    this._ms.guardarMarcadores();
   }
 }
