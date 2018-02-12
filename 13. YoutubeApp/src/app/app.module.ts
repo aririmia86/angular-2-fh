@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {YoutubeService} from './services/youtube.service';
+import {HttpModule} from '@angular/http';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {YoutubeService} from './services/youtube.service';
     NavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   providers: [
     YoutubeService
