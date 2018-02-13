@@ -27,4 +27,15 @@ export class HomeComponent implements OnInit {
     $('#exampleModal').modal();
   }
 
+  cerrarModal() {
+    this.videoSeleccionado = null;
+    $('#exampleModal').modal('hide');
+  }
+
+  cargarMas() {
+    this._ys.getVideos().subscribe(videos => {
+      this.videos.push.apply(this.videos, videos);
+    });
+  }
+
 }

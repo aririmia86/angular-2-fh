@@ -19,6 +19,9 @@ export class YoutubeService {
     params.set('maxResults', '10');
     params.set('playlistId', this.playlist);
     params.set('key', this.apiKey);
+    if (this.nextPageToken) {
+      params.set('pageToken', this.nextPageToken);
+    }
     return this.http.get(url, {search: params}).map(res => {
       this.nextPageToken = res.json().nextPageToken;
       const videos: any[] = [];
